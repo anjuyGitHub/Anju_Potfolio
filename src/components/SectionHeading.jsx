@@ -1,14 +1,16 @@
 import React from "react";
 
-function SectionHeading({ n, label, title }) {
+function SectionHeading({ number, label, title, description }) {
   return (
-    <div className="heading">
-      <span>{n}</span>
+    <div className="section-heading">
+      <div className="section-number">{number}</div>
 
-      <div>
-        <p className="eyebrow">{label}</p>
+      <div className="section-heading-content">
+        <span className="section-kicker">{label}</span>
 
         <h2>{title}</h2>
+
+        {description && <p>{description}</p>}
       </div>
     </div>
   );

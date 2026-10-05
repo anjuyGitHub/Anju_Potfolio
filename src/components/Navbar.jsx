@@ -1,45 +1,94 @@
 import React, { useState } from "react";
-import { navigation } from "../data/portfolioData";
+import { Link, useLocation } from "react-router-dom";
+
+const navigation = [
+  {
+    label: "Home",
+    path: "/",
+  },
+  {
+    label: "About",
+    path: "/#about",
+  },
+  {
+    label: "Skills",
+    path: "/#skills",
+  },
+  {
+    label: "Experience",
+    path: "/#experience",
+  },
+  {
+    label: "Education",
+    path: "/#education",
+  },
+  {
+    label: "Projects",
+    path: "/projects",
+  },
+  {
+    label: "Contact",
+    path: "/#contact",
+  },
+];
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
+  const location = useLocation();
 
-  const close = () => {
+  const closeMenu = () => {
     setMenu(false);
   };
+
+  const isProjectsPage = location.pathname === "/projects";
 
   return (
     <header className="site-navbar">
       <div className="navbar-inner">
-        {/* Logo */}
+        {/* LOGO */}
 
-        <a className="logo" href="#home" onClick={close}>
-          <b>A</b>
+        <Link to="/" className="logo" onClick={closeMenu}>
+          <span className="logo-mark">A</span>
 
-          <span>
-            Anju<span className="accent">.</span>
+          <span className="logo-name">
+            Anju<span>.</span>
           </span>
-        </a>
+        </Link>
 
-        {/* Mobile Menu Button */}
+        {/* DESKTOP NAV */}
+
+        <nav className={`site-nav ${menu ? "open" : ""}`}>
+          {navigation.map((item) => {
+            const active =
+              item.path === "/projects"
+                ? isProjectsPage
+                : item.path === "/" && location.pathname === "/";
+
+            return (
+              <Link
+                key={item.label}
+                to={item.path}
+                className={active ? "active" : ""}
+                onClick={closeMenu}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* MOBILE MENU */}
 
         <button
-          className="menu-btn"
-          onClick={() => setMenu(!menu)}
+          className="menu-button"
+          type="button"
+          onClick={() => setMenu((prev) => !prev)}
           aria-label="Toggle navigation"
+          aria-expanded={menu}
         >
-          {menu ? "✕" : "☰"}
+          <span></span>
+          <span></span>
         </button>
-
-        {/* Navigation */}
-
-        <nav className={menu ? "site-nav open" : "site-nav"}>
-          {navigation.map((item) => (
-            <a key={item} href={`#${item}`} onClick={close}>
-              {item}
-            </a>
-          ))}
-        </nav>
       </div>
     </header>
   );

@@ -1,38 +1,40 @@
 import React from "react";
-
 import SectionHeading from "./SectionHeading";
 
 import { skills } from "../data/portfolioData";
 
 function Skills() {
   return (
-    <section id="skills" className="section section-dark">
-      <div className="container-fluid portfolio-container px-0">
+    <section id="skills" className="section skills-section">
+      <div className="container portfolio-container">
         <SectionHeading
-          n="02"
+          number="02"
           label="TECHNICAL SKILLS"
           title={
             <>
-              My <span className="accent">toolbox.</span>
+              My <span className="gradient-text">toolbox.</span>
             </>
           }
+          description="Technologies and tools I use to design, build and maintain modern web applications."
         />
 
-        <div className="row g-3">
-          {Object.entries(skills).map(([name, list]) => (
-            <div className="col-12 col-sm-6 col-lg-3" key={name}>
-              <article className="card h-100">
-                <i>{name[0]}</i>
+        <div className="skills-grid">
+          {Object.entries(skills).map(([name, list], index) => (
+            <article className="skill-card" key={name}>
+              <div className="skill-card-header">
+                <span className="skill-number">0{index + 1}</span>
 
-                <h3>{name}</h3>
+                <span className="skill-icon">{name[0]}</span>
+              </div>
 
-                <div className="tags">
-                  {list.map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
-              </article>
-            </div>
+              <h3>{name}</h3>
+
+              <div className="skill-list">
+                {list.map((skill) => (
+                  <span key={skill}>{skill}</span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </div>

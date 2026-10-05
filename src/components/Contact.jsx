@@ -2,12 +2,14 @@ import React from "react";
 
 function Contact() {
   return (
-    <section id="contact" className="contact">
-      <div>
-        <p className="eyebrow">06 — CONTACT</p>
+    <section id="contact" className="contact-section">
+      <div className="contact-grid"></div>
+
+      <div className="container contact-container">
+        <span className="section-kicker">06 — CONTACT</span>
 
         <h2>
-          Let's build something <span className="gradient">great.</span>
+          Let's build something <span className="gradient-text">great.</span>
         </h2>
 
         <p>
@@ -15,20 +17,25 @@ function Contact() {
           contribute, learn and grow.
         </p>
 
-        <a className="btn primary" href="mailto:your-email@example.com">
-          Get In Touch ↗
+        <a className="button button-dark" href="mailto:your-email@example.com">
+          Get In Touch
+          <span>↗</span>
         </a>
 
-        <div className="links">
-          <a href="https://github.com/" target="_blank" rel="noreferrer">
-            GitHub
+        <div className="contact-links">
+          <a
+            href="https://github.com/anjuyGitHub/Anju_Potfolio"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub ↗
           </a>
 
           <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-            LinkedIn
+            LinkedIn ↗
           </a>
 
-          <a href="mailto:your-email@example.com">Email</a>
+          <a href="mailto:your-email@example.com">Email ↗</a>
         </div>
       </div>
     </section>

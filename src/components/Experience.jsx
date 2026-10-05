@@ -1,36 +1,44 @@
 import React from "react";
-
 import SectionHeading from "./SectionHeading";
 
 import { experience } from "../data/portfolioData";
 
 function Experience() {
   return (
-    <section id="experience" className="section">
-      <div className="container-fluid portfolio-container px-0">
+    <section id="experience" className="section experience-section">
+      <div className="container portfolio-container">
         <SectionHeading
-          n="03"
+          number="03"
           label="EXPERIENCE"
           title={
             <>
-              Where I've <span className="accent">worked.</span>
+              Where I've <span className="gradient-text">worked.</span>
             </>
           }
+          description="Professional experience across frontend development, full-stack applications and enterprise integrations."
         />
 
-        <div className="timeline">
-          {experience.map((job) => (
-            <article className="job" key={job.company}>
-              <div className="dot"></div>
-
-              <div className="job-period">
-                <time>{job.period}</time>
+        <div className="experience-timeline">
+          {experience.map((job, index) => (
+            <article
+              className="experience-item"
+              key={`${job.company}-${index}`}
+            >
+              <div className="experience-marker">
+                <span></span>
               </div>
 
-              <div>
-                <h3>{job.role}</h3>
+              <div className="experience-period">{job.period}</div>
 
-                <h4>{job.company}</h4>
+              <div className="experience-content">
+                <div className="experience-header">
+                  <div>
+                    <h3>{job.role}</h3>
+                    <h4>{job.company}</h4>
+                  </div>
+
+                  <span className="experience-index">0{index + 1}</span>
+                </div>
 
                 <ul>
                   {job.points.map((point) => (

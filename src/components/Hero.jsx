@@ -1,109 +1,117 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
-  // Resume ke according professional experience start year
   const experienceStartYear = 2024;
-
   const currentYear = new Date().getFullYear();
-
   const yearsOfExperience = currentYear - experienceStartYear;
 
   return (
-    <section id="home" className="hero section">
-      <div className="container-fluid portfolio-container px-0">
-        <div className="row align-items-center g-5">
-          {/* ================= LEFT SIDE ================= */}
+    <section id="home" className="hero">
+      <div className="hero-grid"></div>
 
-          <div className="col-12 col-lg-7">
-            <div className="hero-content">
-              <p className="hero-eyebrow">HELLO, I'M ANJU KUMARI</p>
+      <div className="container portfolio-container">
+        <div className="hero-layout">
+          {/* LEFT */}
 
-              <h1>
-                Frontend Developer
-                <br />
-                <span className="gradient">
-                  building scalable
-                  <br />
-                  digital experiences.
-                </span>
-              </h1>
+          <div className="hero-content">
+            <div className="hero-intro">
+              <span className="hero-status-dot"></span>
 
-              <p className="hero-text">
-                Frontend Developer specializing in React.js and Node.js,
-                building responsive web applications, REST APIs and
-                production-ready digital solutions with clean and maintainable
-                code.
-              </p>
+              <span>FULL STACK DEVELOPER</span>
+            </div>
 
-              <div className="hero-meta">
-                <div className="hero-meta-item">
-                  <strong>{yearsOfExperience}+</strong>
-                  <span>Years Experience</span>
-                </div>
+            <p className="hero-eyebrow">HELLO, I'M ANJU KUMARI</p>
 
-                <div className="hero-meta-divider"></div>
+            <h1>
+              Building
+              <br />
+              <span className="gradient-text">scalable digital</span>
+              <br />
+              experiences.
+            </h1>
 
-                <div className="hero-meta-item">
-                  <strong>React + Node</strong>
-                  <span>Core Stack</span>
-                </div>
+            <p className="hero-description">
+              Frontend Developer specializing in React.js and Node.js, building
+              responsive web applications, REST APIs and production-ready
+              digital solutions with clean and maintainable code.
+            </p>
 
-                <div className="hero-meta-divider"></div>
+            {/* STATS */}
 
-                <div className="hero-meta-item">
-                  <strong>Full Stack</strong>
-                  <span>Development</span>
-                </div>
+            <div className="hero-stats">
+              <div className="hero-stat">
+                <strong>{yearsOfExperience}+</strong>
+
+                <span>Years Experience</span>
               </div>
 
-              <div className="actions">
-                <a className="btn primary" href="#projects">
-                  View My Work
-                  <span>↗</span>
-                </a>
+              <div className="hero-stat">
+                <strong>React + Node</strong>
 
-                <a className="btn" href="/Anju_Kumari_Resume.pdf" download>
-                  Download Resume
-                  <span>↓</span>
-                </a>
-
-                <a className="btn" href="#contact">
-                  Let's Connect
-                </a>
+                <span>Core Stack</span>
               </div>
 
-              <div className="hero-technologies">
-                <span className="tech-label">CORE TECHNOLOGIES</span>
+              <div className="hero-stat">
+                <strong>Full Stack</strong>
 
-                <div className="tags">
-                  <span>React.js</span>
-                  <span>Node.js</span>
-                  <span>JavaScript</span>
-                  <span>REST APIs</span>
-                  <span>TypeScript</span>
-                </div>
+                <span>Development</span>
+              </div>
+            </div>
+
+            {/* ACTIONS */}
+
+            <div className="hero-actions">
+              <Link to="/projects" className="button button-primary">
+                View My Work
+                <span>↗</span>
+              </Link>
+
+              <a href="/Anju_Kumari_Resume.pdf" download className="button">
+                Download Resume
+                <span>↓</span>
+              </a>
+
+              <a href="#contact" className="button">
+                Let's Connect
+              </a>
+            </div>
+
+            {/* TECHNOLOGIES */}
+
+            <div className="hero-technologies">
+              <span>CORE TECHNOLOGIES</span>
+
+              <div>
+                <b>React.js</b>
+                <b>Node.js</b>
+                <b>JavaScript</b>
+                <b>REST APIs</b>
+                <b>TypeScript</b>
               </div>
             </div>
           </div>
 
-          {/* ================= RIGHT SIDE ================= */}
+          {/* RIGHT CODE CARD */}
 
-          <div className="col-12 col-lg-5">
-            <div className="hero-visual">
-              <div className="code-card">
-                <div className="bar">
-                  <span className="window-dots">● ● ●</span>
-
-                  <span>anju.js</span>
+          <div className="hero-visual">
+            <div className="code-card">
+              <div className="code-card-header">
+                <div className="code-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
 
-                <pre>
-                  {`const developer = {
+                <span>anju.js</span>
+
+                <span className="code-status">● online</span>
+              </div>
+
+              <pre>
+                {`const developer = {
   name: "Anju Kumari",
-
-  role: "Frontend Developer",
-
-  experience: "${yearsOfExperience}+ years",
+  role: "Full Stack Developer",
 
   stack: [
     "React.js",
@@ -117,16 +125,28 @@ function Hero() {
     "Scalable Apps"
   ]
 };`}
-                </pre>
+              </pre>
 
-                <div className="availability">
-                  <span className="status-dot"></span>
-                  Currently working as Full Stack Developer
-                </div>
+              <div className="code-card-footer">
+                <span className="status-dot"></span>
+
+                <span>Currently working as Full Stack Developer</span>
               </div>
+            </div>
+
+            {/* DECORATIVE ELEMENT */}
+
+            <div className="floating-badge">
+              <span>✦</span>
+              Clean Code
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="hero-scroll">
+        <span>SCROLL TO EXPLORE</span>
+        <span className="scroll-line"></span>
       </div>
     </section>
   );

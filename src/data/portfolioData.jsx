@@ -87,6 +87,7 @@ export const experience = [
 export const projects = [
   {
     n: "01",
+    type: "Enterprise Integration",
     title: "Sage Intacct → CINC Integration",
 
     desc: "Automated financial integration for invoice and payment synchronization using REST/XML APIs and scheduled Zoho Catalyst automation.",
@@ -94,42 +95,66 @@ export const projects = [
     tech: ["Node.js", "Axios", "REST", "XML", "Zoho Catalyst"],
 
     featured: true,
+
+    github: null,
+    live: null,
   },
 
   {
     n: "02",
+    type: "Frontend Application",
     title: "Countries Explorer",
 
     desc: "Single-page country explorer with search, region filtering, React Router, dark/light theme and responsive design.",
 
     tech: ["React.js", "REST API", "React Router", "CSS"],
+
+    featured: false,
+
+    github: null,
+    live: null,
   },
 
   {
     n: "03",
+    type: "Full Stack Application",
     title: "Expense Tracker",
 
     desc: "Full-stack finance application with transaction CRUD, monthly charts and JWT-based personalized data.",
 
     tech: ["React.js", "Node.js", "Express", "MongoDB", "JWT"],
+
+    featured: false,
+
+    github: null,
+    live: null,
   },
 
   {
     n: "04",
+    type: "Full Stack Application",
     title: "Task Management Dashboard",
 
-    desc: "Multi-user task system with role-based access, drag-and-drop Kanban and backend validation.",
+    desc: "Multi-user task management system with role-based access, drag-and-drop Kanban and backend validation.",
 
     tech: ["React.js", "Node.js", "Express", "MongoDB"],
-  },
-];
 
-export const navigation = [
-  "home",
-  "about",
-  "skills",
-  "experience",
-  "projects",
-  "education",
-  "contact",
+    featured: false,
+
+    github: null,
+    live: null,
+  },
+
+  // Future project example:
+  //
+  // {
+  //   n: "05",
+  //   type: "Frontend Application",
+  //   title: "My New Project",
+  //   desc: "Project description...",
+  //   tech: ["React", "TypeScript", "API"],
+  //   featured: false,
+  //   github: "https://github.com/...",
+  //   live: "https://..."
+  // },
 ];
