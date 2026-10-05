@@ -1058,3 +1058,40 @@ footer {
     font-size: 11px;
   }
 }
+
+.hero-meta {
+  display: flex;
+  gap: 32px;
+  margin: 28px 0;
+  flex-wrap: wrap;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-meta-item strong {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hero-meta-item span {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+@media (max-width: 576px) {
+  .hero-meta {
+    gap: 20px;
+  }
+
+  .hero-meta-item strong {
+    font-size: 0.9rem;
+  }
+
+  .hero-meta-item span {
+    font-size: 0.7rem;
+  }
+}
