@@ -60,11 +60,7 @@ function Hero() {
                 View My Work ↗
               </a>
 
-              <a
-                className="btn"
-                href="./public/Anju_kumari_Resume.pdf"
-                download
-              >
+              <a className="btn" href="/Anju_Kumari_Resume.pdf" download>
                 Download Resume ↓
               </a>
 
