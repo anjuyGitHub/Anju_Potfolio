@@ -46,7 +46,6 @@ function Navbar() {
     <header className="site-navbar">
       <div className="navbar-inner">
         {/* LOGO */}
-
         <Link to="/" className="logo" onClick={closeMenu}>
           <span className="logo-mark">A</span>
 
@@ -55,8 +54,7 @@ function Navbar() {
           </span>
         </Link>
 
-        {/* DESKTOP NAV */}
-
+        {/* DESKTOP / MOBILE NAV */}
         <nav className={`site-nav ${menu ? "open" : ""}`}>
           {navigation.map((item) => {
             const active =
@@ -78,7 +76,6 @@ function Navbar() {
         </nav>
 
         {/* MOBILE MENU */}
-
         <button
           className="menu-button"
           type="button"
