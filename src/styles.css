@@ -15,6 +15,8 @@
   --accent: #8b5cf6;
   --accent-pink: #ec4899;
 
+  --success: #4ade80;
+
   --max: 1280px;
 }
 
@@ -36,12 +38,9 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-
   background: var(--bg);
   color: var(--text);
-
   font-size: 16px;
-
   overflow-x: hidden;
 }
 
@@ -82,13 +81,10 @@ button {
 
 .site-navbar {
   position: sticky;
-
   top: 0;
-
   z-index: 1000;
 
   width: 100%;
-
   height: 76px;
 
   background: rgba(11, 12, 15, 0.92);
@@ -96,34 +92,32 @@ button {
   border-bottom: 1px solid var(--line);
 
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .navbar-inner {
   width: min(94%, var(--max));
-
   height: 100%;
 
   margin: auto;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
 
 
-/* LOGO */
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo {
   display: flex;
-
   align-items: center;
 
   gap: 10px;
 
   font-size: 1rem;
-
   font-weight: 800;
 
   white-space: nowrap;
@@ -131,7 +125,6 @@ button {
 
 .logo b {
   display: grid;
-
   place-items: center;
 
   width: 34px;
@@ -140,7 +133,6 @@ button {
   border-radius: 9px;
 
   background: var(--text);
-
   color: var(--bg);
 }
 
@@ -149,11 +141,12 @@ button {
 }
 
 
-/* NAVIGATION */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .site-nav {
   display: flex;
-
   align-items: center;
 
   gap: 25px;
@@ -176,7 +169,9 @@ button {
 }
 
 
-/* MOBILE MENU BUTTON */
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
 
 .menu-btn {
   display: none;
@@ -184,7 +179,6 @@ button {
   border: 1px solid var(--line);
 
   background: var(--surface);
-
   color: var(--text);
 
   cursor: pointer;
@@ -221,35 +215,61 @@ button {
   min-height: calc(100vh - 76px);
 
   display: flex;
-
   align-items: center;
 
-  padding-top: 70px;
+  padding-top: 90px;
+  padding-bottom: 90px;
 
-  padding-bottom: 70px;
+  background: var(--bg);
+}
+
+.hero .row {
+  width: 100%;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+  width: 100%;
+  max-width: 760px;
+}
+
+.hero-eyebrow {
+  margin: 0 0 24px;
+
+  color: var(--accent);
+
+  font:
+    500 0.78rem "DM Mono",
+    monospace;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  max-width: 780px;
 
-  line-height: 0.98;
+  margin: 0;
 
-  letter-spacing: -0.06em;
+  color: var(--text);
+
+  font-size: clamp(3.2rem, 5.4vw, 5.2rem);
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
 
   font-weight: 800;
 }
 
-.eyebrow {
-  margin-bottom: 18px;
-
-  color: var(--accent);
-
-  font: 500 0.8rem "DM Mono", monospace;
-
-  letter-spacing: 0.16em;
-}
-
 .gradient {
+  display: inline-block;
+
   background: linear-gradient(
     100deg,
     var(--accent),
@@ -257,25 +277,90 @@ button {
   );
 
   -webkit-background-clip: text;
-
   background-clip: text;
+
+  -webkit-text-fill-color: transparent;
 
   color: transparent;
 }
 
 
-/* HERO TEXT */
+/* =====================================================
+   HERO TEXT
+===================================================== */
 
 .hero-text {
-  max-width: 650px;
+  max-width: 680px;
 
-  margin: 28px 0;
+  margin: 30px 0 0;
 
   color: var(--muted);
 
-  font-size: 1.05rem;
+  font-size: 1rem;
 
   line-height: 1.85;
+}
+
+
+/* =====================================================
+   HERO META
+===================================================== */
+
+.hero-meta {
+  display: flex;
+  align-items: stretch;
+
+  width: fit-content;
+
+  margin: 32px 0;
+
+  border: 1px solid var(--line);
+
+  border-radius: 12px;
+
+  background: var(--surface);
+
+  overflow: hidden;
+}
+
+.hero-meta-item {
+  min-width: 125px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 17px 20px;
+}
+
+.hero-meta-item strong {
+  color: var(--text);
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.hero-meta-item span {
+  color: var(--muted);
+
+  font-size: 0.7rem;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+.hero-meta-divider {
+  width: 1px;
+
+  margin: 14px 0;
+
+  background: var(--line);
 }
 
 
@@ -285,20 +370,25 @@ button {
 
 .actions {
   display: flex;
+  align-items: center;
 
-  gap: 12px;
+  gap: 10px;
 
   flex-wrap: wrap;
+
+  margin-top: 6px;
 }
 
 .btn {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
-  padding: 14px 21px;
+  gap: 8px;
+
+  min-height: 46px;
+
+  padding: 12px 18px;
 
   border: 1px solid var(--line);
 
@@ -308,13 +398,16 @@ button {
 
   color: var(--text);
 
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 
-  font-weight: 700;
+  font-weight: 600;
+
+  white-space: nowrap;
 
   transition:
     transform 0.2s ease,
     background 0.2s ease,
+    border-color 0.2s ease,
     color 0.2s ease;
 }
 
@@ -322,6 +415,10 @@ button {
   transform: translateY(-2px);
 
   color: var(--text);
+
+  border-color: #444750;
+
+  background: var(--surface);
 }
 
 .btn.primary {
@@ -335,13 +432,33 @@ button {
 .btn.primary:hover {
   background: #ffffff;
 
-  color: #000;
+  color: #000000;
 }
 
 
 /* =====================================================
-   TAGS
+   HERO TECHNOLOGIES
 ===================================================== */
+
+.hero-technologies {
+  margin-top: 34px;
+}
+
+.tech-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #777983;
+
+  font:
+    500 0.65rem "DM Mono",
+    monospace;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
 
 .tags {
   display: flex;
@@ -350,7 +467,7 @@ button {
 
   gap: 8px;
 
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .tags span {
@@ -360,11 +477,43 @@ button {
 
   border-radius: 999px;
 
+  background: rgba(255, 255, 255, 0.02);
+
   color: var(--muted);
 
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+
+  line-height: 1;
 
   white-space: nowrap;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.tags span:hover {
+  color: var(--text);
+
+  border-color: #41434d;
+
+  background: var(--surface);
+}
+
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+.hero-visual {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
 }
 
 
@@ -375,11 +524,7 @@ button {
 .code-card {
   width: 100%;
 
-  max-width: 520px;
-
-  margin-left: auto;
-
-  margin-right: auto;
+  max-width: 500px;
 
   overflow: hidden;
 
@@ -389,41 +534,90 @@ button {
 
   background: var(--surface);
 
-  box-shadow: 0 25px 70px #0006;
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
+.code-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #383a44;
+}
+
+
+/* =====================================================
+   CODE CARD BAR
+===================================================== */
+
 .bar {
-  padding: 14px;
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 18px;
 
   border-bottom: 1px solid var(--line);
 
   color: var(--muted);
 
-  font: 13px "DM Mono", monospace;
+  font:
+    12px "DM Mono",
+    monospace;
 }
 
-pre {
+.window-dots {
+  color: #666872;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   CODE
+===================================================== */
+
+.code-card pre {
   max-width: 100%;
 
   margin: 0;
 
-  padding: 30px;
+  padding: 25px 26px;
 
-  color: var(--muted);
+  color: #bfc0c8;
 
-  font: 13px/2 "DM Mono", monospace;
+  font:
+    12px/1.85 "DM Mono",
+    monospace;
 
   white-space: pre-wrap;
 
   overflow-x: auto;
 }
 
-.code-card small {
-  display: block;
 
-  margin: 0 20px 20px;
+/* =====================================================
+   AVAILABILITY
+===================================================== */
 
-  padding: 12px;
+.availability {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin: 0 18px 18px;
+
+  padding: 11px 13px;
+
+  border: 1px solid var(--line);
 
   border-radius: 8px;
 
@@ -431,7 +625,23 @@ pre {
 
   color: var(--muted);
 
-  font: 11px "DM Mono", monospace;
+  font:
+    10px "DM Mono",
+    monospace;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--success);
+
+  box-shadow:
+    0 0 8px rgba(74, 222, 128, 0.5);
 }
 
 
@@ -454,7 +664,9 @@ pre {
 
   color: var(--muted);
 
-  font: 13px "DM Mono", monospace;
+  font:
+    13px "DM Mono",
+    monospace;
 }
 
 .heading h2 {
@@ -586,7 +798,9 @@ pre {
 .card small {
   color: var(--accent);
 
-  font: 12px "DM Mono", monospace;
+  font:
+    12px "DM Mono",
+    monospace;
 }
 
 .card > span {
@@ -622,7 +836,6 @@ pre {
   position: absolute;
 
   left: -5px;
-
   top: 7px;
 
   width: 10px;
@@ -636,7 +849,9 @@ pre {
 .job time {
   color: var(--muted);
 
-  font: 12px "DM Mono", monospace;
+  font:
+    12px "DM Mono",
+    monospace;
 }
 
 .job h3 {
@@ -697,7 +912,9 @@ pre {
 
   color: var(--muted);
 
-  font: 12px "DM Mono", monospace;
+  font:
+    12px "DM Mono",
+    monospace;
 }
 
 .project h3 {
@@ -824,7 +1041,6 @@ footer {
 ===================================================== */
 
 @media (max-width: 991px) {
-
   .section {
     padding: 90px 0;
   }
@@ -833,12 +1049,29 @@ footer {
     min-height: auto;
 
     padding-top: 80px;
-
     padding-bottom: 80px;
   }
 
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 7vw, 4.5rem);
+  }
+
+  .hero-text {
+    max-width: 700px;
+  }
+
+  .hero-visual {
+    justify-content: flex-start;
+
+    margin-top: 25px;
+  }
+
   .code-card {
-    margin-top: 10px;
+    max-width: 650px;
   }
 
   .job {
@@ -852,7 +1085,6 @@ footer {
 ===================================================== */
 
 @media (max-width: 767px) {
-
   .site-navbar {
     height: 68px;
   }
@@ -869,7 +1101,6 @@ footer {
     position: absolute;
 
     top: 68px;
-
     left: 0;
 
     width: 100%;
@@ -902,30 +1133,171 @@ footer {
   }
 
 
-  /* HERO */
+  /* =====================================================
+     HERO MOBILE
+  ===================================================== */
 
   .hero {
     padding-top: 65px;
-
     padding-bottom: 65px;
   }
 
+  .hero-eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 0.7rem;
+  }
+
   .hero h1 {
+    max-width: 100%;
+
     font-size: clamp(
       2.7rem,
       13vw,
       4rem
     );
+
+    line-height: 1.03;
   }
 
   .hero-text {
-    font-size: 1rem;
+    margin-top: 22px;
 
-    line-height: 1.8;
+    font-size: 0.9rem;
+
+    line-height: 1.75;
   }
 
 
-  /* SECTION */
+  /* =====================================================
+     HERO META MOBILE
+  ===================================================== */
+
+  .hero-meta {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin: 26px 0;
+
+    border-radius: 10px;
+  }
+
+  .hero-meta-item {
+    min-width: 0;
+
+    padding: 14px 10px;
+  }
+
+  .hero-meta-item strong {
+    font-size: 0.8rem;
+  }
+
+  .hero-meta-item span {
+    font-size: 0.62rem;
+
+    white-space: normal;
+  }
+
+  .hero-meta-divider {
+    display: none;
+  }
+
+  .hero-meta-item:not(:last-child) {
+    border-right: 1px solid var(--line);
+  }
+
+
+  /* =====================================================
+     HERO BUTTONS MOBILE
+  ===================================================== */
+
+  .actions {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+
+    gap: 9px;
+  }
+
+  .actions .btn {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 11px 12px;
+
+    font-size: 0.75rem;
+  }
+
+  .actions .btn:last-child {
+    grid-column: 1 / -1;
+  }
+
+
+  /* =====================================================
+     HERO TECHNOLOGIES MOBILE
+  ===================================================== */
+
+  .hero-technologies {
+    margin-top: 28px;
+  }
+
+  .tags {
+    gap: 7px;
+  }
+
+  .tags span {
+    padding: 7px 9px;
+
+    font-size: 0.65rem;
+  }
+
+
+  /* =====================================================
+     CODE CARD MOBILE
+  ===================================================== */
+
+  .hero-visual {
+    margin-top: 35px;
+  }
+
+  .code-card {
+    max-width: 100%;
+
+    border-radius: 13px;
+  }
+
+  .bar {
+    padding: 12px 14px;
+
+    font-size: 10px;
+  }
+
+  .code-card pre {
+    padding: 20px 18px;
+
+    font-size: 10px;
+
+    line-height: 1.75;
+  }
+
+  .availability {
+    margin: 0 14px 14px;
+
+    padding: 9px 11px;
+
+    font-size: 9px;
+  }
+
+
+  /* =====================================================
+     SECTION
+  ===================================================== */
 
   .section {
     padding: 75px 0;
@@ -936,7 +1308,9 @@ footer {
   }
 
 
-  /* HEADING */
+  /* =====================================================
+     HEADING
+  ===================================================== */
 
   .heading {
     gap: 12px;
@@ -949,14 +1323,18 @@ footer {
   }
 
 
-  /* ABOUT */
+  /* =====================================================
+     ABOUT
+  ===================================================== */
 
   .about .large {
     font-size: 1.2rem;
   }
 
 
-  /* STATS */
+  /* =====================================================
+     STATS
+  ===================================================== */
 
   .stats div {
     padding: 20px;
@@ -967,7 +1345,9 @@ footer {
   }
 
 
-  /* EXPERIENCE */
+  /* =====================================================
+     EXPERIENCE
+  ===================================================== */
 
   .timeline {
     margin-left: 6px;
@@ -992,14 +1372,18 @@ footer {
   }
 
 
-  /* PROJECT */
+  /* =====================================================
+     PROJECT
+  ===================================================== */
 
   .project {
     min-height: 280px;
   }
 
 
-  /* CONTACT */
+  /* =====================================================
+     CONTACT
+  ===================================================== */
 
   .contact {
     padding: 90px 5%;
@@ -1014,7 +1398,9 @@ footer {
   }
 
 
-  /* FOOTER */
+  /* =====================================================
+     FOOTER
+  ===================================================== */
 
   footer {
     flex-direction: column;
@@ -1029,20 +1415,47 @@ footer {
 ===================================================== */
 
 @media (max-width: 400px) {
+  .hero {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
 
   .hero h1 {
-    font-size: 2.65rem;
+    font-size: 2.55rem;
   }
+
+  .hero-text {
+    font-size: 0.85rem;
+  }
+
+
+  /* META */
+
+  .hero-meta-item {
+    padding: 13px 7px;
+  }
+
+  .hero-meta-item strong {
+    font-size: 0.72rem;
+  }
+
+  .hero-meta-item span {
+    font-size: 0.58rem;
+  }
+
+
+  /* BUTTONS */
 
   .actions {
-    flex-direction: column;
-
-    align-items: stretch;
+    grid-template-columns: 1fr;
   }
 
-  .actions .btn {
-    width: 100%;
+  .actions .btn:last-child {
+    grid-column: auto;
   }
+
+
+  /* STATS */
 
   .stats b {
     font-size: 1.6rem;
@@ -1052,46 +1465,39 @@ footer {
     font-size: 0.7rem;
   }
 
-  pre {
-    padding: 20px;
 
-    font-size: 11px;
+  /* CODE */
+
+  .code-card pre {
+    padding: 18px 14px;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+  }
+
+  .availability {
+    font-size: 8px;
   }
 }
 
-.hero-meta {
-  display: flex;
-  gap: 32px;
-  margin: 28px 0;
-  flex-wrap: wrap;
-}
 
-.hero-meta-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
 
-.hero-meta-item strong {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.hero-meta-item span {
-  font-size: 0.75rem;
-  opacity: 0.6;
-}
-
-@media (max-width: 576px) {
-  .hero-meta {
-    gap: 20px;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  .hero-meta-item strong {
-    font-size: 0.9rem;
-  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
 
-  .hero-meta-item span {
-    font-size: 0.7rem;
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
   }
 }
